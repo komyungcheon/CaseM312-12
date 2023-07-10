@@ -68,7 +68,6 @@ class ProductService {
     //     });
     // }
 
-
     update(product) {
         return new Promise((resolve, reject) => {
             connection.getConnection().query(
@@ -78,10 +77,11 @@ class ProductService {
                         id  = ${product.id},
                         name = '${product.name}', 
                         price= ${product.price}, 
-                        quantity= ${product.quantity}, 
+                        quantity= ${product.quantity},
+                        image= '${product.image}'
                         
                        
-                       
+                  
                     where id = ${product.id}`, (err, data) => {
                     if (err) {
                         reject(err)

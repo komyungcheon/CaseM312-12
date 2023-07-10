@@ -33,8 +33,9 @@ class ProductController {
                     productService.findById(urlObject.query.idEdit).then((product) => {
                         stringHTML = stringHTML.replace('{id}', product.id);
                         stringHTML = stringHTML.replace('{name}', product.name);
-                        stringHTML = stringHTML.replace('{age}', product.price);
-                        stringHTML = stringHTML.replace('{height}', product.quantity);
+                        stringHTML = stringHTML.replace('{price}', product.price);
+                        stringHTML = stringHTML.replace('{quantity}', product.quantity);
+                        stringHTML = stringHTML.replace('{image}', product.image);
                         res.write(stringHTML);
                         res.end();
                     });
@@ -82,38 +83,70 @@ class ProductController {
 }
 function showList(req, res, searchValue) {
     fs.readFile('view/product/list.html', 'utf-8', (err, stringHTML) => {
-        let str = '<table class="table table-hover table-striped align-middle text-center">';
+        let str = '';
         productService.findAll(searchValue).then((products)=> {
             for (const product of products) {
-                str += `
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="${product.image}" alt="">
-                    <div class="p-4">
-                        <div class="d-flex justify-content-between mb-3">
-                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>${product.id}. ${product.name}</small>
-                            <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>Quantity: ${product.quantity}</small>
-                            <small class="m-0"><i class="fa fa-user text-primary mr-2"></i></small>
-                        </div>
-                        <div class="border-top mt-4 pt-4">
-                            <div class="d-flex justify-content-between">
-                                <h5 class="m-0">Price: ${product.price}</h5>
-                            </div>
-                            <div>
-                            <a href="/edit-product?idEdit=${product.id}"><i class="fa-solid fa-pencil"></i>
-                            <button class="btn btn-primary">Edit</button>
-                            </a>
-                            <a onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" 
-                     href="/delete-product?idDelete=${product.id}"><i class="fa-solid fa-trash-can"></i>
-                      <button class="btn btn-primary">Delete</button>
-                     </a>
-                           
-                         
-</div>
+                str +=`
+                <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Hot</div>
+                            <!-- Product image-->
+                            <img class="card-img-top img-fluid" style="height: 350px" src="${product.image}" alt="...">
+                            <!-- Product details-->
+<!--                            <div class="card-body p-4">-->
+
+<!--                            </div>-->
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center" style="min-height: 125px">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">${product.id}.${product.name}</h5>
+                                    <!-- Product price-->
+                                    <span class="text-decoration">${product.price}$</span>
+                                    <br>
+                                    <span class="text-decoration">Số lượng :${product.quantity}</span>
+                                </div>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a href="/edit-product?idEdit=${product.id}" class="btn btn-primary me-1"><i class="fa-solid fa-pencil"></i>
+                                    </a>
+                                    <a onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"
+                             href="/delete-product?idDelete=${product.id}" class="btn btn-danger ms-1"><i class="fa-solid fa-trash-can"></i>
+                                    </a>
+                                </div>
+                           </div>
                         </div>
                     </div>
-                </div>
-        </div>`
+                `
+//                 str += `
+// //             <div class="col-lg-4 col-md-6 mb-4">
+// //                 <div class="package-item bg-white mb-2">
+// //                     <img class="img-fluid" src="${product.image}" alt="">
+// //                     <div class="p-4">
+// //                         <div class="d-flex justify-content-between mb-3">
+// //                             <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>${product.id}. ${product.name}</small>
+// //                             <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>Quantity: ${product.quantity}</small>
+// //                             <small class="m-0"><i class="fa fa-user text-primary mr-2"></i></small>
+// //                         </div>
+// //                         <div class="border-top mt-4 pt-4">
+// //                             <div class="d-flex justify-content-between">
+// //                                 <h5 class="m-0">Price: ${product.price}</h5>
+// //                             </div>
+// //                             <div>
+//                             <a href="/edit-product?idEdit=${product.id}"><i class="fa-solid fa-pencil"></i>
+//                             <button class="btn btn-primary">Edit</button>
+//                             </a>
+//                             <a onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"
+//                      href="/delete-product?idDelete=${product.id}"><i class="fa-solid fa-trash-can"></i>
+//                       <button class="btn btn-primary">Delete</button>
+//                      </a>
+// //
+// //
+// // </div>
+// //                         </div>
+// //                     </div>
+// //                 </div>
+// //         </div>`
             }
             stringHTML = stringHTML.replace('{listProduct}',str);
             res.write(stringHTML);

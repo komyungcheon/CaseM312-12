@@ -13,7 +13,7 @@
     <form action="/edit-product" method="post" class="form">
         <div class="input-box">
             <label>ID</label>
-            <input type="text" name="id" value="{id}"/>
+            <input type="hidden" name="id" value="{id}"/>
         </div>
         <div class="input-box">
             <label>Name</label>
@@ -26,6 +26,10 @@
         <div class="input-box">
             <label>Quantity</label>
             <input type="text" name="quantity" value="{quantity}">
+        </div>
+        <div class="input-box">
+            <label>Image</label>
+            <input type="text" name="image" value="{image}">
         </div>
         <button>Save</button>
     </form>
