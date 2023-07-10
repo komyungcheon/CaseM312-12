@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../public/css/styleadd.css">
+
+
+</head>
+<body>
+<section class="container">
+    <header>Thêm mới thông tin cẩu thủ</header>
+    <form action="/add-player" method="post" class="form">
+        <div class="input-box">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Enter Name" required />
+        </div>
+        <div class="input-box">
+            <label>Age</label>
+            <input type="text" name="age" placeholder="Nhập tuổi cẩu thủ" required />
+        </div>
+        <div class="input-box">
+            <label>Height</label>
+            <input type="text" name="height" placeholder="Nhập chiều cao cẩu thủ" required />
+        </div>
+        <div class="input-box">
+            <label>Quốc tịch</label>
+            <input type="text" name="nationality" placeholder="Nhập quốc tịch cẩu thủ" required />
+        </div>
+        <div class="input-box">
+            <label>CLB thi đấu</label>
+            <input type="text" name="clb" placeholder="Nhập CLB muốn thi đấu" required />
+        </div>
+        <div class="input-box">
+            <label>Vị trí thi đấu</label>
+            <input type="text" name="vitri" placeholder="Nhập vị trí muốn thi đấu" required />
+        </div>
+        <div class="input-box">
+            <label>Ngày gia nhập đội</label>
+            <input type="text" name="dateofjoin" placeholder="Nhập ngày vào đội" required />
+        </div>
+
+
+        <div class="input-box">
+            <label>Lương</label>
+            <input type="text" name="salary" placeholder="Nhập lương cẩu thủ" required />
+        </div>
+        <div class="input-box">
+            <label>Img</label>
+            <input type="text" name="img" placeholder="Thêm ảnh cẩu thủ" required />
+        </div>
+
+        <button type="submit">Add</button>
+    </form>
+</section>
+</body>
+</html>
