@@ -1,26 +1,26 @@
 import connection from "../connection.js";
 
 
-class PlayerService {
+class ProductService {
     constructor() {
         connection.connecting();
     }
 
     findAll(searchValue) {
         return new Promise((resolve, reject) => {
-            connection.getConnection().query(`select * from players WHERE name like '%${searchValue}%' order by id`, (err, players) => {
+            connection.getConnection().query(`select * from product WHERE name like '%${searchValue}%' order by id`, (err, product) => {
                 if (err) {
                     reject(err)
                 } else {
-                    resolve(players)
+                    resolve(product)
                 }
             })
         })
     }
 
-    save(player) {
+    save(product) {
         return new Promise((resolve, reject) => {
-            connection.getConnection().query(`INSERT INTO players(name,age,height,nationality,clb,vitri,dateofjoin,salary,img) VALUES ('${player.name}', ${player.age}, ${player.height}, '${player.nationality}', '${player.clb}', '${player.vitri}', '${player.dateofjoin}', ${player.salary},'${player.img}')`, (err, data) => {
+            connection.getConnection().query(`INSERT INTO product(name,price,quantity) VALUES ('${product.name}', ${product.price}, ${product.quantity}, )`, (err, data) => {
                 if (err) {
                     reject(err);
                 } else {
@@ -33,23 +33,23 @@ class PlayerService {
 
     findById(id) {
         return new Promise((resolve, reject) => {
-            connection.getConnection().query(`select * from players where id = ${id}`, (err, players) => {
+            connection.getConnection().query(`select * from product where id = ${id}`, (err, product) => {
                 if (err) {
                     reject(err)
                 } else {
 
-                    resolve(players[0])
+                    resolve(product[0])
                 }
             })
         })
     }
     delete(idDelete) {
         return new Promise((resolve, reject) => {
-            connection.getConnection().query(`DELETE FROM players WHERE id = ${idDelete}`, (err, delPlayer) => {
+            connection.getConnection().query(`DELETE FROM product WHERE id = ${idDelete}`, (err, delProduct) => {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(delPlayer);
+                    resolve(delProduct);
                 }
             });
 
@@ -69,25 +69,20 @@ class PlayerService {
     // }
 
 
-    update(player) {
+    update(product) {
         return new Promise((resolve, reject) => {
             connection.getConnection().query(
 
-                `update players 
+                `update product 
                         set     
-                        id  = ${player.id},
-                        name = '${player.name}', 
-                        age= ${player.age}, 
-                        height = ${player.height},
-                        nationality ='${player.nationality}',
-                        clb ='${player.clb}',
-                        vitri = '${player.vitri}',
-                        dateofjoin = '${player.dateofjoin}', 
-                        salary = ${player.salary},
-                        img = '${player.img}'
+                        id  = ${product.id},
+                        name = '${product.name}', 
+                        price= ${product.price}, 
+                        quantity= ${product.quantity}, 
+                        
                        
                        
-                    where id = ${player.id}`, (err, data) => {
+                    where id = ${product.id}`, (err, data) => {
                     if (err) {
                         reject(err)
                     } else {
@@ -100,4 +95,4 @@ class PlayerService {
     }
 }
 
-export default new PlayerService();
+export default new ProductService();

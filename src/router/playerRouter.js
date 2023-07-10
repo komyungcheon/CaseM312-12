@@ -1,13 +1,13 @@
 import fs from 'fs'
 import qs from "qs";
-import playerController from "../controller/playerController.js";
+import productController from "../controller/productController.js";
 
 
 let playerRouter = {
-    '/players': playerController.showAll,
-    '/add-player': playerController.add,
-    '/edit-player':playerController.edit,
-    '/delete-player':playerController.delete,
+    '/product': productController.showAll,
+    '/add-product': productController.add,
+    '/edit-product':productController.edit,
+    '/delete-product':productController.delete,
 
 }
 

@@ -22,7 +22,7 @@ class HomeController {
                   </ul>
                 </ul>
             `;
-            navReplace = `<a href="/players" class="nav_link">Danh sách sản phẩm</a>`
+            navReplace = `<a href="/product" class="nav_link">Danh sách sản phẩm</a>`
         } else {
             htmlReplace = '<button class="button" id="form-open">Login</button>'
             navReplace = `<a class="nav_link" id="login-open">Players</a>`
