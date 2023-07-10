@@ -84,24 +84,36 @@ function showList(req, res, searchValue) {
     fs.readFile('view/product/list.html', 'utf-8', (err, stringHTML) => {
         let str = '<table class="table table-hover table-striped align-middle text-center">';
         productService.findAll(searchValue).then((products)=> {
-            str += `<tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                </tr>`
             for (const product of products) {
                 str += `
-                   <div class="card" style="width: 18rem;">
-  <img src="${product.image}" class="card-img-top-fluid" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${product.id}. ${product.name}</h5>
-    <p class="card-text">$ ${product.price}</p>
-    <p class="card-text">Số lượng: ${product.quantity}</p>
-    <a href="/edit-product" class="btn btn-primary">Edit</a>
-  </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="package-item bg-white mb-2">
+                    <img class="img-fluid" src="${product.image}" alt="">
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>${product.id}. ${product.name}</small>
+                            <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>Quantity: ${product.quantity}</small>
+                            <small class="m-0"><i class="fa fa-user text-primary mr-2"></i></small>
+                        </div>
+                        <div class="border-top mt-4 pt-4">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="m-0">Price: ${product.price}</h5>
+                            </div>
+                            <div>
+                            <a href="/edit-product?idEdit=${product.id}"><i class="fa-solid fa-pencil"></i>
+                            <button class="btn btn-primary">Edit</button>
+                            </a>
+                            <a onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" 
+                     href="/delete-product?idDelete=${product.id}"><i class="fa-solid fa-trash-can"></i>
+                      <button class="btn btn-primary">Delete</button>
+                     </a>
+                           
+                         
 </div>
-                        `
+                        </div>
+                    </div>
+                </div>
+        </div>`
             }
             stringHTML = stringHTML.replace('{listProduct}',str);
             res.write(stringHTML);
