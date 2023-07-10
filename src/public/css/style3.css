@@ -1,4 +1,4 @@
-* {
+body {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
@@ -45,41 +45,10 @@ body {
 width: 100%;
 }
 
-.header {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 20px 80px;
-background: #000000;
-box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-z-index: 999;
-position: sticky;
-top: 0;
-left: 0;
-}
 
 .header img.logo {
 width: 10%;
 height: 10%;
-}
-
-.navbar {
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.navbar li {
-list-style: none;
-padding: 0 20px;
-}
-
-.navbar li a {
-text-decoration: none;
-font-size: 15px;
-font-weight: 600;
-color: #fff;
-transition: 0.5s ease;
 }
 
 .hero {

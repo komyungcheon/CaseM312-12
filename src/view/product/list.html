@@ -1,200 +1,83 @@
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-
-<!--  &lt;!&ndash;&#45;&#45;======== CSS ======== &ndash;&gt;-->
-<!--  <link rel="stylesheet" href="../public/css/style1.css">-->
-
-<!--  &lt;!&ndash;&#45;&#45;===== Iconscout CSS ===== &ndash;&gt;-->
-<!--  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">-->
-<!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
-<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">-->
-
-<!--  <title>Admin Dashboard Panel</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<nav>-->
-<!--  <div class="logo-name">-->
-<!--    <div class="logo-image">-->
-<!--      <img src="/public/css/logo.png" alt="">-->
-<!--    </div>-->
-
-<!--    <span class="logo_name">Football Player</span>-->
-<!--  </div>-->
-
-<!--  <div class="menu-items">-->
-<!--    <ul class="nav-links">-->
-<!--      <li><a href="/">-->
-<!--        <i class="uil uil-estate"></i>-->
-<!--        <span class="link-name">Home</span>-->
-<!--      </a></li>-->
-<!--      <li><a href="/players">-->
-<!--        <i class="uil uil-files-landscapes"></i>-->
-<!--        <span class="link-name">Player List</span>-->
-<!--      </a></li>-->
-<!--      <li><a href="/add-player">-->
-<!--        <i class="uil uil-chart"></i>-->
-<!--        <span class="link-name">Add Product</span>-->
-<!--      </a></li>-->
-<!--    </ul>-->
-
-<!--    <ul class="logout-mode">-->
-<!--      <li><a href="#">-->
-<!--        <i class="uil uil-signout"></i>-->
-<!--        <span class="link-name">Logout</span>-->
-<!--      </a></li>-->
-
-<!--      <li class="mode">-->
-<!--        <a href="#">-->
-<!--          <i class="uil uil-moon"></i>-->
-<!--          <span class="link-name">Dark Mode</span>-->
-<!--        </a>-->
-
-<!--        <div class="mode-toggle">-->
-<!--          <span class="switch"></span>-->
-<!--        </div>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--</nav>-->
-
-<!--<section class="dashboard">-->
-<!--  <div class="top">-->
-<!--    <div class="search-box">-->
-<!--      <form action="" method="get" id="">-->
-<!--        <input type="search" name="search" placeholder="Tìm kiếm...">-->
-<!--        <button type="submit" class="btn btn-success"><i class="fa-solid fa-magnifying-glass"></i></button>-->
-<!--      </form>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <div class="dash-content">-->
-<!--    <div class="overview">-->
-<!--      <div class="title">-->
-<!--        <i class="uil uil-tachometer-fast-alt"></i>-->
-<!--        <span class="text">Danh sách cẩu thủ</span>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="activity">-->
-<!--      {listPlayer}-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  </div>-->
-<!--</section>-->
-
-<!--<script src="../public/script1.js"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>-->
-<!--</body>-->
-<!--</html>-->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title> C0323H1 </title>
+  <title>Website menu 02</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="view/css/style.css">
 
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-  <link rel="stylesheet" href="../../public/css/style3.css">
 </head>
-
 <body>
-<section class="header">
-  <a href="/home"><img src="../../public/css/sport.jpg" alt="logo-home" class="logo"></a>
-  <div>
-    <ul class="navbar">
-      <li><a class="active" href="/home"> Trang chủ </a></li>
-      <li><a href="#hot-product"> Sản phẩm </a></li>
-      <li><a href="#"> Liên hệ </a></li>
-      <li><a href="#"> Hỗ trợ </a></li>
-      <li><a href="#"><i class='bx bx-shopping-bag'></i></a></li>
-    </ul>
-  </div>
-</section>
-
-<section class="hero">
-  <div class="hero-text">
-    <h4> Sale off 50% ngày 7 tháng 7 </h4>
-    <h2> Chuyên cung cấp giày đá bóng chính hãng </h2>
-    <h1> C0323H1 Shop </h1>
-  </div>
-  <div class="hero-overlay">
-  </div>
-</section>
-
-<section class="feature section-p1">
-  <div class="fe-box">
-    <img src="" alt="">
-  </div>
-  <div class="fe-box">
-    <img src="" alt="">
-  </div>
-  <div class="fe-box">
-    <img src="" alt="">
-  </div>
-  <div class="fe-box">
-    <img src="" alt="">
-  </div>
-</section>
-
-<div class="slideshow-container">
-  <div class="mySlides fade">
-    <img src="" style="width:100%" alt="">
-  </div>
-
-  <div class="mySlides fade">
-    <img src="" style="width:100%" alt>
-  </div>
-
-  <div class="mySlides fade">
-    <img src="" style="width:100%" alt>
-  </div>
-
-  <div class="mySlides fade">
-    <img src="" style="width:100%" alt="">
-  </div>
-</div>
-<br>
-<div style="text-align:center">
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-</div>
-{listProduct}
-<section class="product section-p1">
-  <h2 id="hot-product" style="color: black; padding: 50px;"> Các mẫu giày bán chạy </h2>
-  <p> Adidas || Nike || Puma || Mizuno </p>
-  <div class="pro-container">
-    <div class="pro">
-      <img src="" alt="">
-      <div class="des">
-        <span> Puma </span>
-        <h5> Giày đá bóng PUMA FUTURE 5.1 NETFIT MG YELLOW BLACK </h5>
-        <div class="star">
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bx-star'></i>
-        </div>
-        <h4 style="color: black;"> 3.650.000 VNĐ </h4>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center" style="margin-top: -60px">
+      <div class="col-md-6 text-center mb-5">
+        <h2 class="heading-section">Welcome to my store</h2>
       </div>
     </div>
   </div>
-</section>
-<!--<script src="./../../view/js/slide.js"></script>-->
-</body>
 
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col" style="margin-top: -40px">
+        <a class="navbar-brand" href="index.html">Sport<span>All you need</span></a>
+      </div>
+      <div class="col d-flex justify-content-end">
+        <div class="social-media">
+          <p class="mb-0 d-flex">
+            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <form action="#" class="searchform order-lg-last">
+        <div class="form-group d-flex">
+          <input type="text" class="form-control pl-3" placeholder="Search">
+          <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+        </div>
+      </form>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <a class="dropdown-item" href="#">Page 1</a>
+              <a class="dropdown-item" href="#">Page 2</a>
+              <a class="dropdown-item" href="#">Page 3</a>
+              <a class="dropdown-item" href="#">Page 4</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">Catalog</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+</section>
+
+{listProduct}
+
+<script src="view/js/jquery.min.js"></script>
+<script src="view/js/popper.js"></script>
+<script src="view/js/bootstrap.min.js"></script>
+<script src="view/js/main.js"></script>
+
+</body>
 </html>
+

@@ -20,7 +20,7 @@ class ProductService {
 
     save(product) {
         return new Promise((resolve, reject) => {
-            connection.getConnection().query(`INSERT INTO product(name,price,quantity) VALUES ('${product.name}', ${product.price}, ${product.quantity}, )`, (err, data) => {
+            connection.getConnection().query(`INSERT INTO product(name,price,quantity,image) VALUES ('${product.name}', ${product.price}, ${product.quantity}, ${product.image})`, (err, data) => {
                 if (err) {
                     reject(err);
                 } else {

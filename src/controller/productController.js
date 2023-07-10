@@ -89,32 +89,21 @@ function showList(req, res, searchValue) {
                     <th>Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                   
-                   
                 </tr>`
             for (const product of products) {
                 str += `
-                     <tr>
-                    <td>${product.id}</td>
-                    <td><a class="text-decoration-none" href="/index">${product.name}</a></td>
-                   <td>${product.price}</td>
-                   <td>${product.quantity}</td>
-                    
-                   
-                  
-                    
-                   <td><a href="/edit-product?idEdit=${product.id}" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
-                    <a onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" 
-                     class="btn btn-danger" href="/delete-product?idDelete=${product.id}"><i class="fa-solid fa-trash-can"></i>
-                     </a>
-                    </td>
-                   
-                    </tr>
+                   <div class="card" style="width: 18rem;">
+  <img src="${product.image}" class="card-img-top-fluid" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${product.id}. ${product.name}</h5>
+    <p class="card-text">$ ${product.price}</p>
+    <p class="card-text">Số lượng: ${product.quantity}</p>
+    <a href="/edit-product" class="btn btn-primary">Edit</a>
+  </div>
+</div>
                         `
             }
-            str += `</table>`
             stringHTML = stringHTML.replace('{listProduct}',str);
-
             res.write(stringHTML);
             res.end();
         })
