@@ -8,6 +8,8 @@ let playerRouter = {
     '/add-product': productController.add,
     '/edit-product':productController.edit,
     '/delete-product':productController.delete,
+    '/sortByPrice':productController.sortByPrice,
+    '/sortByQuantity':productController.sortByQuantity,
 
 }
 

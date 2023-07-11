@@ -17,6 +17,28 @@ class ProductService {
             })
         })
     }
+    findByPrice() {
+        return new Promise((resolve, reject) => {
+            connection.getConnection().query(`select * from product ORDER BY price desc`, (err, product) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(product)
+                }
+            })
+        })
+    }
+    findByQuantity() {
+        return new Promise((resolve, reject) => {
+            connection.getConnection().query(`select * from product ORDER BY quantity desc`, (err, product) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(product)
+                }
+            })
+        })
+    }
 
     save(product) {
         return new Promise((resolve, reject) => {
